@@ -9,6 +9,6 @@ describe("Todos endpoint", () => {
   it("should return a 200 status code", async () => {
     const response = await request(baseUrl).get("todos/1");
     const { body } = response;
-    expect(body.userId).toBe(1);
+    expect(body.).toBe();
   });
 });
