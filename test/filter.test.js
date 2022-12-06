@@ -13,8 +13,9 @@ test("Filter product by category success", async () => {
 });
 
 test("Filter product is null when filter by not existed category", async () => {
-  const data = await filter({ category: 1 });
+  const data = await filter({ category: -1 });
   let status = 1;
+  // console.log(data);
   if (data.length != 0) {
     status = 0;
   }

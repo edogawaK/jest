@@ -1,33 +1,47 @@
 const login = require("../core/login");
 
-test("Login With Correct Email And Password", async () => {
-  const status = await login(
-    "kisenguyen1410263@gmail.com",
-    "kisenguyen1410263@gmail.com"
-  );
-  expect(status).toBe(1);
-});
+const data = [
+  {
+    testCase: "Login With Correct Email And Password",
+    expect: 1,
+    payload: {
+      email: "kisenguyen1410263@gmail.com",
+      password: "kisenguyen1410263@gmail.com",
+    },
+  },
+  {
+    testCase: "Login With Wrong Or Not Exist Email And Password",
+    expect: 0,
+    payload: {
+      email: "notexist@gmail.com",
+      password: "kisenguyen1410263@gmail.com",
+    },
+  },
+  {
+    testCase: "Login With Correct Email And Wrong Password",
+    expect: 0,
+    payload: {
+      email: "kisenguyen1410263@gmail.com",
+      password: "kisengkkjjkljlkjlkuyen1410263@gmail.com",
+    },
+  },
+  {
+    testCase: "Login With Invalid Email And Password",
+    expect: 0,
+    payload: {
+      email: "notexistgmail.com",
+      password: "kisenguyen1410263@gmail.com",
+    },
+  },
+];
 
-test("Login With Wrong Or Not Exist Email And Password", async () => {
-  const status = await login(
-    "notexist@gmail.com",
-    "kisenguyen1410263@gmail.com"
-  );
-  expect(status).toBe(0);
-});
-
-test("Login With Correct Email And Wrong Password", async () => {
-  const status = await login(
-    "notexist@gmail.com",
-    "kisenguyen1410263@gmail.com"
-  );
-  expect(status).toBe(0);
-});
-
-test("Login With Invalid Email And Password", async () => {
-  const status = await login(
-    "notexistgmail.com",
-    "kisenguyen1410263@gmail.com"
-  );
-  expect(status).toBe(0);
+data.forEach((i) => {
+  test(i.testCase, async () => {
+    const payload = i.payload;
+    const status = await login(
+      i.payload.email,
+      i.payload.password
+    );
+    expect(status).toBe(i.expect);
+  });
 });
