@@ -5,7 +5,7 @@ const data = [
     testCase: "Login With Correct Email And Password",
     expect: 1,
     payload: {
-      email: "kisenguyen1410263@gmail.com",
+      email: "kisenguyen141063@gmail.com",
       password: "kisenguyen1410263@gmail.com",
     },
   },
@@ -42,6 +42,7 @@ data.forEach((i) => {
       i.payload.email,
       i.payload.password
     );
+    console.log(status);
     expect(status).toBe(i.expect);
   });
 });

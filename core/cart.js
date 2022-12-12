@@ -1,5 +1,5 @@
 const axios = require("axios");
-const token = "40|ZNIMrSK5CCJjohFDT9uJ1IGFtxCa6nuKuc1eJU4y";
+const token = "2|k0PS3PLvERGYFwctyDu2ZqU0NjC1hz88laTR710y";
 
 const api = axios.create({
   headers: { Authorization: `Bearer ${token}` },

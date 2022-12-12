@@ -8,25 +8,25 @@ test("Add To Cart Sucess", async () => {
   expect(status).toBe(1);
 });
 
-// test("Add To Cart Failed Because Quantity Not Enough", async () => {
-//   const status = await cart.addToCart(5, 1, 100);
-//   expect(status).toBe(0);
-// });
+test("Add To Cart Failed Because Quantity Not Enough", async () => {
+  const status = await cart.addToCart(5, 1, 100);
+  expect(status).toBe(0);
+});
 
-// test("Add To Cart Failed Because Product Not Existed", async () => {
-//   const status = await cart.addToCart(100000, 1, 1);
-//   expect(status).toBe(0);
-// });
+test("Add To Cart Failed Because Product Not Existed", async () => {
+  const status = await cart.addToCart(100000, 1, 1);
+  expect(status).toBe(0);
+});
 
-// test("Add To Cart Failed Because Size Not Existed", async () => {
-//   const status = await cart.addToCart(5, 10000, 1);
-//   expect(status).toBe(0);
-// });
+test("Add To Cart Failed Because Size Not Existed", async () => {
+  const status = await cart.addToCart(5, 10000, 1);
+  expect(status).toBe(0);
+});
 
-// test("Add To Cart Failed Because Invalid Payload", async () => {
-//   const status = await cart.addToCart("1000asas", true, false);
-//   expect(status).toBe(0);
-// });
+test("Add To Cart Failed Because Invalid Payload", async () => {
+  const status = await cart.addToCart("1000asas", true, false);
+  expect(status).toBe(0);
+});
 
 /* -------------------------------------------------------------------------- */
 /*                              Test Update Cart                              */
